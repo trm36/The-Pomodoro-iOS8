@@ -14,5 +14,6 @@
 @property (strong, nonatomic, readonly) NSArray *roundTimes;
 
 + (RoundsController *)sharedInstance;
+- (void)roundSelected;
 
 @end

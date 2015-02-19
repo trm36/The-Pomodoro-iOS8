@@ -92,3 +92,18 @@ Pay attention to what the class does for you, walk through each method, understa
   - your timer label won't update until you tap start timer button
   - your timer should be counting down correctly
   - remove the lines of code where you set ```minutes``` and ```seconds```
+
+###Step 6: Add a tableview and datasource methods to the rounds view controller
+
+- Create a ```tableView``` property on the ```RoundsViewController``` and instantiate it with style UITableViewStyleGrouped
+- set ```self``` as datasource and delegate of ```tableView```
+- Add the ```tableView``` to the ```RoundsViewController```'s ```view```
+- Add required datasource methods to display cells that the user can use to select which round they want to start
+  - The cell should display the number of minutes in the round (which can be retieved from the ```RoundsController```)
+- In the ```RoundsController``` add a public, void method, ```roundSelected```
+  - that will update the minutes and seconds on the ```[Timer sharedInstance]``` from the ```currentRound``` property
+  - that will send a ```NewRoundNotification``` notification
+- In the ```RoundsViewController```, add didSelectRowAtIndexPath
+  - set the ```currentRound``` property of ```[RoundsViewController sharedInstance] to the indexPath.row
+  - and call ```roundSelected```
+  - and call ```cancelTimer```
