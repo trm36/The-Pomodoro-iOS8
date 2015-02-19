@@ -58,7 +58,7 @@ The Timer View Controller displays a countdown of the current round and has a St
 Use a separate [Timer]() class to manage the timer. This timer class holds the minutes and seconds and has a method to begin counting down. 
 Pay attention to what the class does for you, walk through each method, understand what it is doing.
 
-- Create a ```POTimer``` Class as a Shared Instance
+- Create a ```Timer``` Class as a Shared Instance
 - Add public properties of type NSInteger for ```minutes``` and ```seconds```
 - Create public static NSStrings with names from above table (```SecondTickNotification```, ```RoundCompleteNotification```, ```NewRoundNotification```)
 - Add a private BOOL property called ```isOn``` to allow you to check if the timer is active
