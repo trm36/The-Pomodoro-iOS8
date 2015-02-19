@@ -21,6 +21,11 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [Timer new];
+        
+        /* code for testing Timer
+        sharedInstance.minutes = 5;
+        sharedInstance.seconds = 10;
+         */
     });
     
     return sharedInstance;

@@ -77,3 +77,18 @@ Pay attention to what the class does for you, walk through each method, understa
 - Add a public void method called ```cancelTimer```
   - ```cancelTimer``` should turn ```isOn``` to NO
   - ```cancelTimer``` should cancel previous perform requests
+
+###Step 5: Update TimerViewController User Interface and Implementation File
+
+- Add a method to your ```TimerViewController``` to update the ````timerLabel``` from the ```sharedInstance``` of ```Timer```.
+- Subscribe your ```TimerViewController``` to run the update label method on the ```SecondTickNotification```.
+  - ```registerForNotifications``` should be placed in a custom init method.
+- Unsubscribe your ```TimerViewController``` from notifications when instances are deallocated.
+- In your timer button pressed method (written above but left empty), call ```startTimer``` on ```sharedInstace``` of ```Timer```.
+  - note: We need to disable the button while the timer is going.
+- At this point we can test that our timer works and the update label method works:
+  - in the ```dispatch_once``` method, set ```sharedInstance.minutes``` and ```sharedInstance.seconds``` to whatever values you want to test (might be smart to make sure the minute decreases appropriately)
+  - build and run the app
+  - your timer label won't update until you tap start timer button
+  - your timer should be counting down correctly
+  - remove the lines of code where you set ```minutes``` and ```seconds```
