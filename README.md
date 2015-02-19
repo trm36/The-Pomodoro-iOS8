@@ -107,3 +107,22 @@ Pay attention to what the class does for you, walk through each method, understa
   - set the ```currentRound``` property of ```[RoundsViewController sharedInstance] to the indexPath.row
   - and call ```roundSelected```
   - and call ```cancelTimer```
+
+###Step 7: Add observer notifications
+- Add ```RoundsViewController``` as observer of ```RoundCompleteNotification```
+  - ```-(void)roundComplete```
+    - if the current round is not the last round 
+      - increment the ```currentRounds``` property
+      - select the correct row on the tableview
+      - call ```roundSelected```
+    - else
+      - set ```currentRounds``` property to 0
+      - select the correct row on the tableview
+      - call ```roundSelected```
+- Add ```TimerViewController``` as observer of ```NewRoundNotification```
+  - ```-(void)newRound```
+    - update ```timerLabel```
+    - enable ```timerButton```
+- Add ```TimerViewController``` as observer of ```RoundCompleteNotification```
+  - ```-(void)newRound```
+- Don't forget to register in the init and unregister in the dealloc

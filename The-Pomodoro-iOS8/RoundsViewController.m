@@ -20,6 +20,18 @@ static NSString *reuseID = @"reuseID";
 
 @implementation RoundsViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        [self registerForNotifications];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -33,6 +45,11 @@ static NSString *reuseID = @"reuseID";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [self unregisterForNotifications];
 }
 
 #pragma mark - TableView Delegate Methods
@@ -62,6 +79,35 @@ static NSString *reuseID = @"reuseID";
 {
     return [RoundsController sharedInstance].roundTimes.count;
 }
+
+#pragma mark - Notification Methods
+
+- (void)registerForNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(roundComplete) name:RoundCompleteNotification object:nil];
+}
+
+- (void)roundComplete
+{
+    if ([RoundsController sharedInstance].currentRound < [RoundsController sharedInstance].roundTimes.count - 1)
+    {
+        [RoundsController sharedInstance].currentRound++;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [[RoundsController sharedInstance] roundSelected];
+    }
+    else
+    {
+        [RoundsController sharedInstance].currentRound = 0;
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [[RoundsController sharedInstance] roundSelected];
+    }
+}
+
+- (void)unregisterForNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 /*
 #pragma mark - Navigation
 

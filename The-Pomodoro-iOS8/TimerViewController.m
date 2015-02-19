@@ -51,6 +51,12 @@
     [[Timer sharedInstance] startTimer];
 }
 
+- (void)newRound
+{
+    [self updateTimerLabel];
+    self.timerButton.enabled = YES;
+}
+
 - (void)updateTimerLabel
 {
     NSInteger minutes = [Timer sharedInstance].minutes;
@@ -87,6 +93,8 @@
 - (void)registerForNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTimerLabel) name:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound) name:NewRoundNotification object:nil];
 }
 
 - (void)unregisterForNotifications
