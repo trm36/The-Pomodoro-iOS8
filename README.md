@@ -32,11 +32,11 @@ Remember, the solution code is here as a resource. Do not copy and paste. Unders
 
 The classes within our app are going to talk to each other with NSNotifications. 
 
-| Notification Name               | When Posted                             | Who Posts        | Who Observes                              |
-|---------------------------------|-----------------------------------------|------------------|-------------------------------------------|
-| ```SecondTickNotification```    | every second tick while timer is active | Timer            | TimerViewController                       |
-| ```RoundCompleteNotification``` | on completion of round                  | Timer            | TimerViewController, RoundsViewController |
-| ```NewRoundNotification```      | when a new round is "selected"          | RoundsController | TimerViewController                       |
+| Notification Name               | When Posted                               | Who Posts        | Who Observes                              |
+|---------------------------------|-------------------------------------------|------------------|-------------------------------------------|
+| ```SecondTickNotification```    | every second tick while timer is active   | Timer            | TimerViewController                       |
+| ```RoundCompleteNotification``` | on completion of round (aka timer expiry) | Timer            | TimerViewController, RoundsViewController |
+| ```NewRoundNotification```      | when a new round is "selected"            | RoundsController | TimerViewController                       |
 
 ###Step 2: Add the interface to the TimerViewController
 
@@ -52,3 +52,28 @@ The Timer View Controller displays a countdown of the current round and has a St
 - Add a public, readonly property of type NSArray called ```roundTimes```
 	- In the implementaion file, override the roundTimes getter method and return this array ```@[@25, @5, @25, @5, @25, @5, @25, @15]```
 - Add a public property of type NSInteger called ```currentRound```
+
+###Step 4: Create a timer class
+
+Use a separate [Timer]() class to manage the timer. This timer class holds the minutes and seconds and has a method to begin counting down. 
+Pay attention to what the class does for you, walk through each method, understand what it is doing.
+
+- Create a ```POTimer``` Class as a Shared Instance
+- Add public properties of type NSInteger for ```minutes``` and ```seconds```
+- Create public static NSStrings with names from above table (```SecondTickNotification```, ```RoundCompleteNotification```, ```NewRoundNotification```)
+- Add a private BOOL property called ```isOn``` to allow you to check if the timer is active
+- Add a public void method called ```startTimer```
+  - ```startTimer``` should turn ```isOn``` to YES
+  - ```startTimer``` should call ```checkActive``` (which you will write below)
+- Add a private void method called ```endTimer```
+  - ```endTimer``` should turn ```isOn``` to NO and send a ```RoundCompleteNotification``` that the timer has finished
+- Add a private void method called ```decreaseSecond```
+  - ```decreaseSecond``` should decrease one second from the remaining time and send a ```SecondTickNotification``` notification that one second passed
+  	- don't forget to change minutes, if necessary
+  	- if the timer has elpased, then call ```endTimer```
+- Add a private void method called ```checkActive```
+  - ```checkActive``` should check if the timer is on (```self.isOn```), and if so, call the ```decreaseSecond``` method, then it should call itself in one second
+  - before the if statement, make sure you cancel previous perform requests
+- Add a public void method called ```cancelTimer```
+  - ```cancelTimer``` should turn ```isOn``` to NO
+  - ```cancelTimer``` should cancel previous perform requests

@@ -16,6 +16,7 @@
 		34FB5C3E1A95B15200E3E2F8 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C3C1A95B15200E3E2F8 /* TimerViewController.m */; };
 		34FB5C3F1A95B15200E3E2F8 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FB5C3D1A95B15200E3E2F8 /* TimerViewController.xib */; };
 		34FB5C431A95BAF100E3E2F8 /* RoundsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C421A95BAF100E3E2F8 /* RoundsController.m */; };
+		34FB5C461A95BCA900E3E2F8 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C451A95BCA900E3E2F8 /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		34FB5C3D1A95B15200E3E2F8 /* TimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		34FB5C411A95BAF100E3E2F8 /* RoundsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsController.h; sourceTree = "<group>"; };
 		34FB5C421A95BAF100E3E2F8 /* RoundsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsController.m; sourceTree = "<group>"; };
+		34FB5C441A95BCA900E3E2F8 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		34FB5C451A95BCA900E3E2F8 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 		34FB5C401A95B15700E3E2F8 /* Timer View */ = {
 			isa = PBXGroup;
 			children = (
+				34FB5C441A95BCA900E3E2F8 /* Timer.h */,
+				34FB5C451A95BCA900E3E2F8 /* Timer.m */,
 				34FB5C3B1A95B15200E3E2F8 /* TimerViewController.h */,
 				34FB5C3C1A95B15200E3E2F8 /* TimerViewController.m */,
 				34FB5C3D1A95B15200E3E2F8 /* TimerViewController.xib */,
@@ -248,6 +253,7 @@
 				34FB5C3E1A95B15200E3E2F8 /* TimerViewController.m in Sources */,
 				34FB5C391A95B10700E3E2F8 /* RoundsViewController.m in Sources */,
 				34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */,
+				34FB5C461A95BCA900E3E2F8 /* Timer.m in Sources */,
 				34FB5C431A95BAF100E3E2F8 /* RoundsController.m in Sources */,
 				34FB5C141A95A83100E3E2F8 /* main.m in Sources */,
 			);
