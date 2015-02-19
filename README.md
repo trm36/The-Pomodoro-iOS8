@@ -45,3 +45,10 @@ The Timer View Controller displays a countdown of the current round and has a St
 - Add a label and button to the timer screen using a XIB
 - Add IBOutlets for the ```timerButton``` and ```timerLabel```
 - Add an IBAction for the ```timerButton``` that will trigger the timer (leave method empty for now)
+
+###Step 3: Create a RoundsController
+
+- Create a ```sharedInstance``` class method on ```RoundsController``` that returns a singleton ```RoundsController``` instance
+- Add a public, readonly property of type NSArray called ```roundTimes```
+	- In the implementaion file, override the roundTimes getter method and return this array ```@[@25, @5, @25, @5, @25, @5, @25, @15]```
+- Add a public property of type NSInteger called ```currentRound```
