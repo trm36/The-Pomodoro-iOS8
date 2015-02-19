@@ -10,6 +10,9 @@
 
 @interface TimerViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *timerButton;
+
 @end
 
 @implementation TimerViewController
@@ -22,6 +25,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)timerButtonPressed {
+    
 }
 
 /*

@@ -15,6 +15,7 @@
 		34FB5C391A95B10700E3E2F8 /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C381A95B10700E3E2F8 /* RoundsViewController.m */; };
 		34FB5C3E1A95B15200E3E2F8 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C3C1A95B15200E3E2F8 /* TimerViewController.m */; };
 		34FB5C3F1A95B15200E3E2F8 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FB5C3D1A95B15200E3E2F8 /* TimerViewController.xib */; };
+		34FB5C431A95BAF100E3E2F8 /* RoundsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C421A95BAF100E3E2F8 /* RoundsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		34FB5C3B1A95B15200E3E2F8 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
 		34FB5C3C1A95B15200E3E2F8 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		34FB5C3D1A95B15200E3E2F8 /* TimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		34FB5C411A95BAF100E3E2F8 /* RoundsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsController.h; sourceTree = "<group>"; };
+		34FB5C421A95BAF100E3E2F8 /* RoundsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 		34FB5C3A1A95B11300E3E2F8 /* Rounds TableView */ = {
 			isa = PBXGroup;
 			children = (
+				34FB5C411A95BAF100E3E2F8 /* RoundsController.h */,
+				34FB5C421A95BAF100E3E2F8 /* RoundsController.m */,
 				34FB5C371A95B10700E3E2F8 /* RoundsViewController.h */,
 				34FB5C381A95B10700E3E2F8 /* RoundsViewController.m */,
 			);
@@ -243,6 +248,7 @@
 				34FB5C3E1A95B15200E3E2F8 /* TimerViewController.m in Sources */,
 				34FB5C391A95B10700E3E2F8 /* RoundsViewController.m in Sources */,
 				34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */,
+				34FB5C431A95BAF100E3E2F8 /* RoundsController.m in Sources */,
 				34FB5C141A95A83100E3E2F8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

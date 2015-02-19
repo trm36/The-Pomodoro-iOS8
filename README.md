@@ -27,3 +27,21 @@ Remember, the solution code is here as a resource. Do not copy and paste. Unders
 - Set the ```viewControllers``` property on the UITabBarController to an array containing your navigation controller with a ```TimerViewController``` instance and your ```RoundsViewController``` instance
 
 - Set the tab bar controller as ```rootViewController``` of ```window```.
+
+###OVERVIEW OF TIMER APP
+
+The classes within our app are going to talk to each other with NSNotifications. 
+
+| Notification Name               | When Posted                             | Who Posts        | Who Observes                              |
+|---------------------------------|-----------------------------------------|------------------|-------------------------------------------|
+| ```SecondTickNotification```    | every second tick while timer is active | Timer            | TimerViewController                       |
+| ```RoundCompleteNotification``` | on completion of round                  | Timer            | TimerViewController, RoundsViewController |
+| ```NewRoundNotification```      | when a new round is "selected"          | RoundsController | TimerViewController                       |
+
+###Step 2: Add the interface to the TimerViewController
+
+The Timer View Controller displays a countdown of the current round and has a Start button to start the timer.
+
+- Add a label and button to the timer screen using a XIB
+- Add IBOutlets for the ```timerButton``` and ```timerLabel```
+- Add an IBAction for the ```timerButton``` that will trigger the timer (leave method empty for now)
