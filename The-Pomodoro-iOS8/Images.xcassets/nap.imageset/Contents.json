@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "rounds.png"
+      "filename" : "nap.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "rounds@2x.png"
+      "filename" : "nap@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "rounds@3x.png"
+      "filename" : "nap@3x.png"
     }
   ],
   "info" : {

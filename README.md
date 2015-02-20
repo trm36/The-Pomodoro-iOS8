@@ -109,6 +109,7 @@ Pay attention to what the class does for you, walk through each method, understa
   - and call ```cancelTimer```
 
 ###Step 7: Add observer notifications
+
 - Add ```RoundsViewController``` as observer of ```RoundCompleteNotification```
   - ```-(void)roundComplete```
     - if the current round is not the last round 
@@ -126,3 +127,18 @@ Pay attention to what the class does for you, walk through each method, understa
 - Add ```TimerViewController``` as observer of ```RoundCompleteNotification```
   - ```-(void)newRound```
 - Don't forget to register in the init and unregister in the dealloc
+
+##Day 2 - UIAppearance
+
+### Step 8: Stylize the App
+
+- Create an ```AppearanceController``` object (make sure to import UIKit, if you need to)
+  - Add a class method called ```initializeAppearanceDefaults```
+    - Update navigationBar color
+    - Update navigationBar title font and text color
+    - Update the tint color on the tab bar
+- Import the ```AppearanceController``` and call the method in the ```AppDelegate```
+- Add images to the tableViewCells
+  - Add a public method that returns an NSArray of imageNames for each round called ```imageNames```
+    - Example: ```@[@"work.png", @"play".png, @"work.png", @"play".png, @"work.png", @"play".png, @"work.png", @"nap.png"]```
+  - In the cellForRowAtIndexPath method, set the image of the imageView of the cell to a UIImage with file named ```[Rounds Controller imageNames][indexPath.row]```

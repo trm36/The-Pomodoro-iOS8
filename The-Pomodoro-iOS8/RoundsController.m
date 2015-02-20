@@ -35,9 +35,14 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundNotification object:nil];
 }
 
--(NSArray *)roundTimes
+- (NSArray *)roundTimes
 {
     return @[@25, @5, @25, @5, @25, @5, @25, @15];
+}
+
++ (NSArray *)imageNames
+{
+    return @[@"work.png", @"play.png", @"work.png", @"play.png", @"work.png", @"play.png", @"work.png", @"nap.png"];
 }
 
 @end

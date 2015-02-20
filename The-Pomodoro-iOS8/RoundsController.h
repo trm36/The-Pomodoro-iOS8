@@ -15,5 +15,6 @@
 
 + (RoundsController *)sharedInstance;
 - (void)roundSelected;
++ (NSArray *)imageNames;
 
 @end
