@@ -10,6 +10,7 @@
 #import "RoundsViewController.h"
 #import "TimerViewController.h"
 #import "AppearanceController.h"
+#import "Timer.h"
 
 @interface AppDelegate ()
 
@@ -68,6 +69,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Round Finished!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Start Next Round" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [[Timer sharedInstance] startTimer];
+    }]];
+    
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -161,3 +161,11 @@ Pay attention to what the class does for you, walk through each method, understa
 - Don't forget to schedule the notification
 - In ```cancelTimer```, cancel all local notifications
 - In the AppDelegate, in applicationDidBecomeActive, registerUserNotifcationsSettings
+
+### Step 11: Add a UIAlertController to handle UILocalNotifications while in app
+- Implement the didRecieveLocalNotification method in AppDelegate
+  - Create a UIAlertController
+  - Add an action to dismiss alert and do nothing
+  - Add an action to start the next round
+    - Use completion handler to call ```startTimer```
+  - Present UIAlertController instance
