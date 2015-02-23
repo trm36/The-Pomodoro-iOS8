@@ -93,4 +93,18 @@
     }
 }
 
+- (void)prepareForBackground
+{
+    [[NSUserDefaults standardUserDefaults] setObject:self.expirationDate forKey:expirationDate];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)loadFromBackground
+{
+    self.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:expirationDate];
+    NSTimeInterval seconds = [self.expirationDate timeIntervalSinceNow];
+    self.minutes = seconds / 60;
+    self.seconds = seconds - (self.minutes * 60);
+}
+
 @end

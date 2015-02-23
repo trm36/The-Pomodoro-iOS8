@@ -169,3 +169,14 @@ Pay attention to what the class does for you, walk through each method, understa
   - Add an action to start the next round
     - Use completion handler to call ```startTimer```
   - Present UIAlertController instance
+
+### Step 12: Prepare and load the timer from background
+- Add a public, void method called ```prepareForBackground``` to ```Timer```
+  - store the ```expirationDate``` property to NSUserDefaults
+  - syncronize the NSUserDefaults
+- Add a public, void method called ```loadFromBackground``` to ```Timer```
+  - set ```expirationDate``` to the expirationDate from NSUserDefault
+  - get the time between now and ```expirationDate``` to set the timer
+  - set the timer
+- In the AppDelegate method applicationDidEnterBackground, call ```prepareForBackground``` on the ```Timer``` ```sharedInstance```
+- In the AppDelegate method applicationWillEnterForeground, call ```loadFromBackground``` on the ```Timer``` ```sharedInstance```
