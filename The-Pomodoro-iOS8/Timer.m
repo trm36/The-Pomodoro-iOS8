@@ -11,6 +11,7 @@
 @interface Timer()
 
 @property (assign, nonatomic) BOOL isOn;
+@property (strong, nonatomic) NSDate *expirationDate;
 
 @end
 
@@ -65,6 +66,10 @@
 - (void)startTimer
 {
     self.isOn = YES;
+    
+    NSTimeInterval timerLength = self.minutes * 60 + self.seconds;
+    self.expirationDate = [NSDate dateWithTimeIntervalSinceNow:timerLength];
+    
     [self checkActive];
 }
 

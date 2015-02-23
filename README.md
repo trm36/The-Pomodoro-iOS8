@@ -142,3 +142,10 @@ Pay attention to what the class does for you, walk through each method, understa
   - Add a public method that returns an NSArray of imageNames for each round called ```imageNames```
     - Example: ```@[@"work.png", @"play".png, @"work.png", @"play".png, @"work.png", @"play".png, @"work.png", @"nap.png"]```
   - In the cellForRowAtIndexPath method, set the image of the imageView of the cell to a UIImage with file named ```[Rounds Controller imageNames][indexPath.row]```
+
+##Day 3 - UILocalNotifications and UIAlertController
+
+### Step 9: Add an ```expirationDate``` property to ```Timer```
+- Create a private, NSDate property on ```Timer``` called ```expirationDate```
+- In the ```startTimer``` method, set ```expirationDate``` to the date (time)
+ when the timer will expire
