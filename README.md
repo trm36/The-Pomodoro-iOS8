@@ -149,3 +149,15 @@ Pay attention to what the class does for you, walk through each method, understa
 - Create a private, NSDate property on ```Timer``` called ```expirationDate```
 - In the ```startTimer``` method, set ```expirationDate``` to the date (time)
  when the timer will expire
+
+### Step 10: Add a UILocalNotification
+- Import UIKit to ```Timer```
+- In the ```startTimer``` method of ```Timer```, instantiate a UILocalNotification.
+- Set the following properties on your UILocalNotifiation
+  - fireDate
+  - timeZone
+  - soundName
+  - alertBody
+- Don't forget to schedule the notification
+- In ```cancelTimer```, cancel all local notifications
+- In the AppDelegate, in applicationDidBecomeActive, registerUserNotifcationsSettings
